@@ -40,3 +40,9 @@ ESP32-based I-V curve tracer that measures semiconductor device characteristics 
 - Semiconductor junction physics
 - Band gap theory
 - Kirchhoff's Voltage Law
+
+## Hardware
+![Circuit](images/circuit.jpg)
+
+## Dashboard
+![Dashboard](images/dashboard.png)

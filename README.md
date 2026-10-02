@@ -7,7 +7,7 @@ ESP32-based I-V curve tracer that measures semiconductor device characteristics 
 - Measures current at each step using an INA219 current sensor
 - Streams data to Python over USB serial
 - Fits the Shockley diode equation using SciPy to extract ideality factor (n) and saturation current (Is)
-- Displays real-time I-V curves in a Streamlit web dashboard
+- Displays measured I-V curves in an interactive Streamlit dashboard
 
 ## Devices characterized
 | Device | Type | Is | n |
@@ -27,19 +27,28 @@ ESP32-based I-V curve tracer that measures semiconductor device characteristics 
 - Arduino C++ firmware
 - Python: pyserial, pandas, numpy, scipy, matplotlib, streamlit, plotly
 
+- Main firmware:firmware/semiconductor_iv_tracer/semiconductor_iv_tracer.ino
+- I2C scanner: firmware/tools/i2c_scanner/i2c_scanner.ino
+
+
 ## How to run
-1. Flash firmware to ESP32 via Arduino IDE
-2. Activate virtual environment: `.venv\Scripts\Activate.ps1`
+1. Install dependencies: pip install -r requirements.txt
+2. Flash firmware to ESP32 via Arduino IDE
 3. Collect data: `python collect.py`
 4. Analyze: `python analyze.py`
 5. Dashboard: `streamlit run app.py`
 
 ## concepts demonstrated
-- Ohm's Law
+- Embedded firmware development
+- Hardware-software integration
+- I2C and UART communication
+- Sensor interfacing
+- Ohm’s law
+- Kirchhoff’s voltage law
 - Shockley diode equation
 - Semiconductor junction physics
-- Band gap theory
-- Kirchhoff's Voltage Law
+- Nonlinear curve fitting
+- Engineering data visualization
 
 ## Hardware
 ![Circuit](images/circuit.jpg)
